@@ -1,0 +1,24 @@
+<h1 class="mb-4">Sistema de Cadastro</h1>
+<a href="{{ url_for('cadastro') }}" class="btn btn-primary mb-4">Novo Cadastro</a>
+{% if pessoas %}
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in pessoas %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nome }}</td>
+            <td>{{ p.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Nenhum cadastro encontrado.</p>
+{% endif %}
